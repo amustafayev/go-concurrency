@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/goroutins/challange"
 	"sync"
+
+	"github.com/goroutins/mutex"
 )
 
 func printSmt(s string, wg *sync.WaitGroup) {
@@ -12,32 +13,38 @@ func printSmt(s string, wg *sync.WaitGroup) {
 }
 
 func main() {
+	// goRoutins()
+	// challange.Challange()
 
-	challange.Challange()
+	mutex.MutexExample()
 
-	// var wg sync.WaitGroup
+}
 
-	// words := []string{
-	// 	"alpha",
-	// 	"beta",
-	// 	"gamma",
-	// 	"delta",
-	// 	"pi",
-	// 	"zeta",
-	// 	"eta",
-	// 	"theta",
-	// 	"epilon",
-	// }
-	// wg.Add(len(words))
+func goRoutins() {
 
-	// for i, el := range words {
-	// 	go printSmt(fmt.Sprintf("%d : %s", i, el), &wg)
-	// }
+	var wg sync.WaitGroup
 
-	// wg.Add(2)
-	// go printSmt("Something print 1", &wg)
+	words := []string{
+		"alpha",
+		"beta",
+		"gamma",
+		"delta",
+		"pi",
+		"zeta",
+		"eta",
+		"theta",
+		"epilon",
+	}
+	wg.Add(len(words))
+
+	for i, el := range words {
+		go printSmt(fmt.Sprintf("%d : %s", i, el), &wg)
+	}
+
+	wg.Add(2)
+	go printSmt("Something print 1", &wg)
 
 	// time.Sleep(1 * time.Second)
 
-	// printSmt("Something print 2", &wg)
+	printSmt("Something print 2", &wg)
 }
