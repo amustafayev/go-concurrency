@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/goroutins/challange"
 	"sync"
-	"time"
 )
 
 func printSmt(s string, wg *sync.WaitGroup) {
@@ -13,29 +13,31 @@ func printSmt(s string, wg *sync.WaitGroup) {
 
 func main() {
 
-	var wg sync.WaitGroup
+	challange.Challange()
 
-	words := []string{
-		"alpha",
-		"beta",
-		"gamma",
-		"delta",
-		"pi",
-		"zeta",
-		"eta",
-		"theta",
-		"epilon",
-	}
-	wg.Add(len(words))
+	// var wg sync.WaitGroup
 
-	for i, el := range words {
-		go printSmt(fmt.Sprintf("%d : %s", i, el), &wg)
-	}
+	// words := []string{
+	// 	"alpha",
+	// 	"beta",
+	// 	"gamma",
+	// 	"delta",
+	// 	"pi",
+	// 	"zeta",
+	// 	"eta",
+	// 	"theta",
+	// 	"epilon",
+	// }
+	// wg.Add(len(words))
 
-	wg.Add(2)
-	go printSmt("Something print 1", &wg)
+	// for i, el := range words {
+	// 	go printSmt(fmt.Sprintf("%d : %s", i, el), &wg)
+	// }
 
-	time.Sleep(1 * time.Second)
+	// wg.Add(2)
+	// go printSmt("Something print 1", &wg)
 
-	printSmt("Something print 2", &wg)
+	// time.Sleep(1 * time.Second)
+
+	// printSmt("Something print 2", &wg)
 }
