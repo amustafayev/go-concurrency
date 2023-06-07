@@ -16,7 +16,8 @@ func main() {
 	// goRoutins()
 	// challange.Challange()
 
-	mutex.MutexExample()
+	// mutex.MutexExample()
+	mutex.ComplexMutexExample()
 
 }
 
