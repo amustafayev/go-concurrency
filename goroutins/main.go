@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/goroutins/mutex"
+	producerconsumer "github.com/goroutins/producer-consumer"
 )
 
 func printSmt(s string, wg *sync.WaitGroup) {
@@ -17,7 +17,8 @@ func main() {
 	// challange.Challange()
 
 	// mutex.MutexExample()
-	mutex.ComplexMutexExample()
+	// mutex.ComplexMutexExample()
+	producerconsumer.ProducerConsumerEx()
 
 }
 
