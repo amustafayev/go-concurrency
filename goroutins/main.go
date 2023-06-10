@@ -18,7 +18,8 @@ func main() {
 
 	// mutex.MutexExample()
 	// mutex.ComplexMutexExample()
-	producerconsumer.ProducerConsumerEx()
+	// producerconsumer.ProducerConsumerEx()
+	producerconsumer.CloseSimulation()
 
 }
 
