@@ -120,22 +120,21 @@ func ProducerConsumerEx() {
 
 	//create and run consumer
 	for i := range pizzaJob.data {
-		pizzaJob.Close()
 		if i.pizzaNumber <= numberOfPizzas {
 
 			if i.success {
 				color.Green(i.message)
-				color.Green("Order number #%d is out for delivery\n", i.pizzaNumber)
+				color.Green("[CONSUMER]Order number #%d is out for delivery\n", i.pizzaNumber)
 			} else {
 				color.Red(i.message)
-				color.Red("The customer is really mad!\n")
+				color.Red("[CONSUMER]The customer is really mad!\n")
 			}
 		} else {
-			color.Cyan("----------------------")
-			color.Cyan("Done making pizzas...")
+			color.Cyan("[CONSUMER]----------------------")
+			color.Cyan("[CONSUMER]Done making pizzas...")
 			err := pizzaJob.Close()
 			if err != nil {
-				color.Red("****Error closing channel")
+				color.Red("[CONSUMER]" + "****Error closing channel")
 			}
 		}
 
@@ -168,7 +167,6 @@ func CloseSimulation() {
 	quitChan := make(chan chan error)
 
 	go func(ch chan chan error) {
-
 		select {
 		case _ = <-ch:
 			fmt.Println("Channel closed triggered")

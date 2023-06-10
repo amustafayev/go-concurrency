@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	producerconsumer "github.com/goroutins/producer-consumer"
+	diningphilospohers "github.com/goroutins/dining-philospohers"
 )
 
 func printSmt(s string, wg *sync.WaitGroup) {
@@ -19,7 +19,8 @@ func main() {
 	// mutex.MutexExample()
 	// mutex.ComplexMutexExample()
 	// producerconsumer.ProducerConsumerEx()
-	producerconsumer.CloseSimulation()
+	// producerconsumer.CloseSimulation()
+	diningphilospohers.DiningPhilospohers()
 
 }
 
