@@ -21,7 +21,8 @@ func main() {
 	// producerconsumer.ProducerConsumerEx()
 	// producerconsumer.CloseSimulation()
 	// diningphilospohers.DiningPhilospohers()
-	channels.ChannelTest()
+	// channels.ChannelTest()
+	channels.SelectExample()
 
 }
 
