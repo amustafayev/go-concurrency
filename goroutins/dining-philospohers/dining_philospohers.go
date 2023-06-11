@@ -93,7 +93,7 @@ func diningProblem(philospoher Philospohers, wg *sync.WaitGroup, forks map[int]*
 		//lock both forks
 
 		//note:
-		//guards the critical section of code that manipulates the shared data.
+		//mutex guards the critical section of code that manipulates the shared data.
 		// multiple goroutines are trying to acquire the lock associated with the /same/ mutex variable
 
 		//
