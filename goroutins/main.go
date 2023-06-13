@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/goroutins/channels"
+	sleepingbarber "github.com/goroutins/sleeping-barber"
 )
 
 func printSmt(s string, wg *sync.WaitGroup) {
@@ -22,7 +22,8 @@ func main() {
 	// producerconsumer.CloseSimulation()
 	// diningphilospohers.DiningPhilospohers()
 	// channels.ChannelTest()
-	channels.SelectExample()
+	// channels.SelectExample()
+	sleepingbarber.SleepingBarberProblem()
 
 }
 
