@@ -19,7 +19,6 @@ type Producer struct {
 
 func (p *Producer) Close() error {
 	ch := make(chan error)
-	println(ch)
 	p.quit <- ch
 	return <-ch
 }
@@ -91,7 +90,7 @@ func pizzeria(pizzaMaker *Producer) {
 			select {
 			//we made pizza and sent it to producer channel
 			case pizzaMaker.data <- *currentPizza:
-			case quitChan := <-pizzaMaker.quit: // Only works when somthing sent to quit channel
+			case quitChan := <-pizzaMaker.quit: // Only works when something sent to quit channel
 				close(pizzaMaker.data)
 				close(quitChan)
 				return
@@ -161,6 +160,7 @@ func ProducerConsumerEx() {
 
 /**
 Quit signal sent just by closing channel
+Not part of the example above
 */
 func CloseSimulation() {
 
